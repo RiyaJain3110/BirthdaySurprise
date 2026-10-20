@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#8b3a62">
+<title>Happy Birthday, My Love ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Georgia", "Times New Roman", serif;
+    background: #120812;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* ================================
+   COMMON
+================================ */
+
+.screen {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 20px;
+    overflow: hidden;
+}
+
+.screen.active {
+    display: flex;
+    animation: screenIn 1s ease forwards;
+}
+
+@keyframes screenIn {
+    from {
+        opacity: 0;
+        transform: scale(1.04);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.content {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+}
+
+.small-title {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 12px;
+    opacity: .75;
+    margin-bottom: 20px;
+}
+
+.main-title {
+    font-size: clamp(38px, 9vw, 75px);
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: clamp(18px, 4vw, 25px);
+    line-height: 1.7;
+}
+
+.btn {
+    border: 1px solid rgba(255,255,255,.6);
+    background: rgba(255,255,255,.12);
+    color: white;
+    padding: 15px 28px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: .3s;
+    backdrop-filter: blur(10px);
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    background: rgba(255,255,255,.2);
+}
+
+.next-btn {
+    margin-top: 35px;
+}
+
+/* ================================
+   BACKGROUNDS
+================================ */
+
+.s1 {
+    background:
+        radial-gradient(circle at 50% 30%, #713452, transparent 40%),
+        linear-gradient(145deg, #130811, #301124, #10060d);
+}
+
+.s2 {
+    background:
+        radial-gradient(circle at center, #9e4d70, transparent 40%),
+        linear-gradient(135deg, #3a1028, #170914);
+}
+
+.s3 {
+    background: linear-gradient(145deg, #5d2445, #1a0b16);
+}
+
+.s4 {
+    background: #f5e7df;
+    color: #3b1728;
+}
+
+.s5 {
+    background: linear-gradient(145deg, #3e132c, #13070f);
+}
+
+.s6 {
+    background:
+        linear-gradient(rgba(15,5,12,.65), rgba(15,5,12,.9)),
+        url("photos/photo7.jpg") center/cover;
+}
+
+.s7 {
+    background: linear-gradient(145deg, #281025, #8b526e);
+}
+
+.s8 {
+    background: #f7e9e2;
+    color: #321421;
+}
+
+.s9 {
+    background: radial-gradient(circle, #70294e, #12060e);
+}
+
+.s10 {
+    background: #10060d;
+}
+
+/* ================================
+   HEARTS
+================================ */
+
+.heart {
+    position: fixed;
+    pointer-events: none;
+    z-index: 100;
+    animation: floatHeart linear forwards;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(100vh) scale(.5) rotate(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-15vh) scale(1.3) rotate(30deg);
+        opacity: 0;
+    }
+}
+
+/* ================================
+   SCREEN 1
+================================ */
+
+.secret-heart {
+    font-size: 90px;
+    animation: heartbeat 1.5s infinite;
+    margin: 25px;
+}
+
+@keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.18); }
+}
+
+.tap-btn {
+    animation: pulseButton 2s infinite;
+}
+
+@keyframes pulseButton {
+    0%,100% {
+        box-shadow: 0 0 0 0 rgba(255,255,255,.25);
+    }
+    50% {
+        box-shadow: 0 0 0 18px rgba(255,255,255,0);
+    }
+}
+
+/* ================================
+   SCREEN 2
+================================ */
+
+.hero-photo {
+    width: min(80vw, 400px);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 25px;
+    border: 5px solid rgba(255,255,255,.8);
+    box-shadow: 0 20px 70px rgba(0,0,0,.45);
+    margin: 25px auto;
+    animation: photoReveal 1.5s ease;
+}
+
+@keyframes photoReveal {
+    from {
+        opacity: 0;
+        transform: scale(.75) rotate(-5deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+/* ================================
+   SCREEN 4 - SCRAPBOOK
+================================ */
+
+.scrapbook {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin: 35px auto;
+    max-width: 800px;
+}
+
+.polaroid {
+    background: white;
+    padding: 10px 10px 35px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.2);
+    color: #333;
+    opacity: 0;
+    animation: dropPhoto .8s forwards;
+}
+
+.polaroid img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.polaroid:nth-child(1) { transform: rotate(-6deg); animation-delay:.1s; }
+.polaroid:nth-child(2) { transform: rotate(4deg); animation-delay:.3s; }
+.polaroid:nth-child(3) { transform: rotate(-3deg); animation-delay:.5s; }
+.polaroid:nth-child(4) { transform: rotate(5deg); animation-delay:.7s; }
+.polaroid:nth-child(5) { transform: rotate(-5deg); animation-delay:.9s; }
+.polaroid:nth-child(6) { transform: rotate(3deg); animation-delay:1.1s; }
+
+@keyframes dropPhoto {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) rotate(0);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.caption {
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+/* ================================
+   SCREEN 5 - REASONS
+================================ */
+
+.reason-number {
+    font-size: 18px;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+    opacity: .7;
+}
+
+.reason-card {
+    min-height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 35px;
+    border-radius: 30px;
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.2);
+    backdrop-filter: blur(15px);
+    animation: cardIn .5s ease;
+}
+
+.reason-card h2 {
+    font-size: clamp(28px, 7vw, 48px);
+    margin-bottom: 20px;
+}
+
+.reason-card p {
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+@keyframes cardIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ================================
+   SCREEN 6
+================================ */
+
+.music-box {
+    padding: 35px;
+    border-radius: 30px;
+    background: rgba(0,0,0,.35);
+    backdrop-filter: blur(10px);
+}
+
+.music-icon {
+    font-size: 70px;
+    animation: musicFloat 2s infinite ease-in-out;
+}
+
+@keyframes musicFloat {
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ================================
+   SCREEN 7
+================================ */
+
+.future-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 35px auto;
+    max-width: 650px;
+}
+
+.future-item {
+    padding: 12px 18px;
+    border-radius: 50px;
+    background: rgba(255,255,255,.15);
+    animation: floatTag 3s infinite ease-in-out;
+}
+
+.future-item:nth-child(even) {
+    animation-delay: .5s;
+}
+
+@keyframes floatTag {
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+/* ================================
+   SCREEN 8 - LETTER
+================================ */
+
+.letter {
+    max-width: 700px;
+    margin: auto;
+    padding: 35px;
+    background: rgba(255,255,255,.75);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.12);
+    text-align: left;
+    line-height: 1.9;
+    font-size: 17px;
+}
+
+.letter p {
+    margin-bottom: 20px;
+}
+
+.cursor {
+    border-right: 2px solid currentColor;
+    animation: blink .7s infinite;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* ================================
+   SCREEN 9
+================================ */
+
+.big-heart {
+    font-size: 130px;
+    cursor: pointer;
+    display: inline-block;
+    animation: heartbeat 1.3s infinite;
+    filter: drop-shadow(0 0 25px rgba(255,80,150,.6));
+}
+
+.big-heart:active {
+    transform: scale(1.5);
+}
+
+/* ================================
+   SCREEN 10
+================================ */
+
+.final-photo {
+    width: min(85vw, 450px);
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border-radius: 25px;
+    opacity: .7;
+    filter: brightness(.65);
+}
+
+.final-message {
+    position: absolute;
+    z-index: 10;
+    width: 90%;
+    max-width: 700px;
+}
+
+.final-message h1 {
+    font-size: clamp(42px, 10vw, 80px);
+    text-shadow: 0 4px 20px rgba(0,0,0,.7);
+}
+
+.final-message p {
+    font-size: 22px;
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+/* ================================
+   CAKE
+================================ */
+
+.cake {
+    font-size: 90px;
+    margin: 25px;
+    animation: cakeFloat 2s infinite ease-in-out;
+}
+
+@keyframes cakeFloat {
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ================================
+   CONFETTI
+================================ */
+
+.confetti {
+    position: fixed;
+    width: 9px;
+    height: 14px;
+    z-index: 200;
+    pointer-events: none;
+    animation: confettiFall 3s linear forwards;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-10vh) rotate(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media(max-width: 650px) {
+
+    .screen {
+        padding: 25px 16px;
+    }
+
+    .scrapbook {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .polaroid {
+        padding: 7px 7px 25px;
+    }
+
+    .caption {
+        font-size: 12px;
+    }
+
+    .letter {
+        padding: 25px 20px;
+        font-size: 16px;
+    }
+
+    .reason-card {
+        padding: 25px 20px;
+        min-height: 270px;
+    }
+
+    .hero-photo {
+        width: 75vw;
+    }
+
+    .future-list {
+        gap: 8px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ========================================
+     SCREEN 1
+========================================= -->
+
+<section class="screen s1 active" id="screen1">
+
+    <div class="content">
+
+        <div class="small-title">
+            A little surprise for you
+        </div>
+
+        <div class="secret-heart">
+            ❤️
+        </div>
+
+        <h1 class="main-title">
+            Hey You…
+        </h1>
+
+        <p class="subtitle">
+            I made something for you. 🥹
+        </p>
+
+        <button class="btn tap-btn" onclick="nextScreen()">
+            💗 TAP TO OPEN YOUR SURPRISE
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     SCREEN 2
+========================================= -->
+
+<section class="screen s2" id="screen2">
+
+    <div class="content">
+
+        <div class="small-title">
+            Today is special…
+        </div>
+
+        <h1 class="main-title">
+            Because you were born today. ❤️
+        </h1>
+
+        <img
+            src="photos/photo1.jpg"
+            class="hero-photo"
+            alt="Our photo"
+        >
+
+        <h2 style="font-size:32px;">
+            Happy Birthday, <span class="his-name">My Love</span>! 🎂❤️
+        </h2>
+
+        <button class="btn next-btn" onclick="nextScreen()">
+            Continue ❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     SCREEN 3
+========================================= -->
+
+<section class="screen s3" id="screen3">
+
+    <div class="content">
+
+        <div class="secret-heart">💗</div>
+
+        <h1 class="main-title">
+            A Little Reminder
+        </h1>
+
+        <p class="subtitle">
+            You are one of the most beautiful things
+            that ever happened to me. ❤️
+        </p>
+
+        <p class="subtitle" style="margin-top:20px;">
+            And somehow…
+            <br>
+            I got lucky enough to call you mine.
+        </p>
+
+        <button class="btn next-btn" onclick="nextScreen()">
+            Keep going… →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     SCREEN 4
+========================================= -->
+
+<section class="screen s4" id="screen4">
+
+    <div class="content">
+
+        <div class="small-title">
+            Our memories
+        </div>
+
+        <h1 class="main-title">
+            Our Little World ❤️
+        </h1>
+
+        <p style="font-size:18px;">
+            A few moments from our story…
+        </p>
+
+        <div class="scrapbook">
+
+            <div class="polaroid">
+                <img src="photos/photo2.jpg">
+                <div class="caption">This smile ❤️</div>
+            </div>
+
+            <div class="polaroid">
+                <img src="photos/photo3.jpg">
+                <div class="caption">One of my favourites.</div>
+            </div>
+
+            <div class="polaroid">
+                <img src="photos/photo4.jpg">
+                <div class="caption">That day… 🥹</div>
+            </div>
+
+            <div class="polaroid">
+                <img src="photos/photo5.jpg">
+                <div class="caption">Us. Always.</div>
+            </div>
+
+            <div class="polaroid">
+                <img src="photos/photo6.jpg">
+                <div class="caption">My favourite person.</div>
+            </div>
+
+            <div class="polaroid">
+                <img src="photos/photo7.jpg">
+                <div class="caption">Another memory ❤️</div>
+            </div>
+
+        </div>
+
+        <button class="btn next-btn"
+                style="background:#6b2947;"
+                onclick="nextScreen()">
+            More ❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     SCREEN 5
+========================================= -->
+
+<section class="screen s5" id="screen5">
+
+    <div class="content">
+
+        <div class="small-title">
+            Just because…
+        </div>
+
+        <h1 class="main-title">
+            10 Things I Love About You
+        </h1>
+
+        <div class="reason-number" id="reasonNumber">
+            01 ❤️
+        </div>
+
+        <div class="reason-card" id="reasonCard">
+
+            <h2>Your smile</h2>
+
+            <p>
+                Because somehow it makes everything feel better.
+            </p>
+
+        </div>
+
+        <button class="btn" id="reasonButton" onclick="nextReason()">
+            Next ❤️
+        </button>
+
+        <br>
+
+        <button class="btn next-btn"
+                onclick="nextScreen()">
+            Continue →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     SCREEN 6
+========================================= -->
+
+<section class="screen s6" id="screen6">
+
+    <div class="content">
+
+        <div class="music-box">
+
+            <div class="music-icon">
+                🎵
+            </div>
+
+            <div class="small-title">
+                Our soundtrack
+            </div>
+
+            <h1 class="main-title">
+                Every Love Story Has A Song
+            </h1>
+
+            <p class="subtitle">
+                And this one reminds me of you. ❤️
+            </p>
+
+            <button class="btn" onclick="openSong()">
+                🎵 PLAY OUR SONG
+            </button>
+
+            <br>
+
+            <button class="btn next-btn"
+                    onclick="nextScreen()">
+                Continue ❤️
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     SCREEN 7
+========================================= -->
+
+<section class="screen s7" id="screen7">
+
+    <div class="content">
+
+        <div class="small-title">
+            Not just today…
+        </div>
+
+        <h1 class="main-title">
+            Our Future ❤️
+        </h1>
+
+        <p class="subtitle">
+            It's about all the birthdays still waiting for us.
+        </p>
+
+        <div class="future-list">
+
+            <div class="future-item">☕ Coffee dates</div>
+            <div class="future-item">✈️ Random adventures</div>
+            <div class="future-item">🌙 Late-night talks</div>
+            <div class="future-item">😂 Silly fights</div>
+            <div class="future-item">❤️ Making up</div>
+            <div class="future-item">🎉 Celebrations</div>
+            <div class="future-item">🌱 Growing together</div>
+            <div class="future-item">👵🏻👴🏻 Growing old together</div>
+
+        </div>
+
+        <h2 style="font-size:35px;">
+            I want all of it.
+        </h2>
+
+        <h2 style="font-size:35px; margin-top:10px;">
+            With you. ❤️
+        </h2>
+
+        <button class="btn next-btn" onclick="nextScreen()">
+            There's a letter for you 💌
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     SCREEN 8
+========================================= -->
+
+<section class="screen s8" id="screen8">
+
+    <div class="content">
+
+        <div class="small-title">
+            From my heart
+        </div>
+
+        <h1 class="main-title">
+            A Letter For You ❤️
+        </h1>
+
+        <div class="letter" id="letter"></div>
+
+        <button class="btn next-btn"
+                style="background:#6b2947; color:white;"
+                onclick="nextScreen()">
+            One Last Surprise 🎁
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     SCREEN 9
+========================================= -->
+
+<section class="screen s9" id="screen9">
+
+    <div class="content">
+
+        <div class="small-title">
+            Wait…
+        </div>
+
+        <h1 class="main-title">
+            I have one more thing to tell you.
+        </h1>
+
+        <div
+            class="big-heart"
+            onclick="finalSurprise()">
+            ❤️
+        </div>
+
+        <p class="subtitle">
+            Tap the heart.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     SCREEN 10
+========================================= -->
+
+<section class="screen s10" id="screen10">
+
+    <div class="content">
+
+        <img
+            src="photos/photo8.jpg"
+            class="final-photo"
+            alt="Our favourite photo"
+        >
+
+        <div class="final-message">
+
+            <h1>
+                If I had to choose you all over again…
+            </h1>
+
+            <p>
+                I would.
+            </p>
+
+            <p>
+                Every single time. ❤️
+            </p>
+
+            <p style="margin-top:35px;">
+                Happy Birthday, <span class="his-name">My Love</span>.
+            </p>
+
+            <p>
+                My today. My tomorrow. My forever. ❤️
+            </p>
+
+            <div class="cake">
+                🎂
+            </div>
+
+            <p>
+                Make a wish… ✨
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* ==================================================
+   ❤️ CUSTOMIZE HERE
+================================================== */
+
+const HIS_NAME = "My Love Siddharthji";
+
+const YOUR_NAME = "Your Riya ❤️";
+
+/*
+   Put your YouTube song URL here.
+   Example:
+   https://www.youtube.com/watch?v=XXXXXXXXXXX
+*/
+const SONG_URL =
+    "https://youtu.be/sZfnwayum2M?si=-1LXlgTQv5bPgLun";
+
+
+/* ==================================================
+   💌 BIRTHDAY LETTER
+================================================== */
+
+const letterText = `
+<p>My Love,</p>
+
+<p>
+Happy Birthday to the person who has become such
+an important part of my life. ❤️
+</p>
+
+<p>
+Sometimes I wonder how one person can become so
+special to us. How someone can slowly become a
+part of our everyday thoughts, our happiness,
+our plans and our dreams.
+</p>
+
+<p>
+And then I think of you.
+</p>
+
+<p>
+Thank you for being there for me, for understanding
+me, guiding and motivating me in imp phase of my Ph.D. submission, advising or correcting me whenever I got wrong, trusting me whenever needed, making me smile when I am feeling low and simply being YOU.
+</p>
+
+<p>
+I may not always able to express it, but I hope you know
+how deeply I care about you.
+</p>
+
+<p>
+I don't just want to celebrate your birthday today.
+I want to celebrate the Person you are (Kind-hearted, Loving, So much caring, Responsible, Loyal, and  most importantly Genuine), want to celebrate the dreams
+you have achieved so far, the long journey you was and are still on and everything that you do you do happily for your (now ours) family and for me in future and lastly want to celebrate everything that
+is still waiting for you.
+</p>
+
+<p>
+And selfishly, I hope I get to be beside you through
+all of it. ❤️
+</p>
+
+<p>
+I want to see your happiest days.
+I want to stand beside you through your difficult days.
+I want to laugh with you over silly things.
+I want to go on long drives with you where there will be just you and me forever.
+I want to enjoy late night talks, movies with you.
+I want to make so many wonderful memories with you and our family.
+I want to travel the entire world with you.
+I want to have our family with you.
+I want to annoy you forever. 😂
+And most importantly, I want to keep choosing you,
+again and again.
+</p>
+
+<p>
+You are not just someone I love.
+</p>
+
+<p>
+You are someone I want in my every tomorrow.
+</p>
+
+<p>
+So on your birthday, I have just one wish for you—
+</p>
+
+<p>
+May you always have reasons to smile, dreams that
+excite and make happy you, people who genuinely love you (like I do ❤️), and a happyyyyy married life
+that will make you so happy and proud (obsively with me😂).
+</p>
+
+<p>
+And whenever life gets difficult, I hope you remember
+that there will always be someone standing beside you,
+cheering for you and believing in you.
+</p>
+
+<p>
+Me. ❤️
+</p>
+
+<p>
+Happy Birthday, my forever most special person, Siddharthji.
+</p>
+
+<p>
+Here's to you.
+<br>
+Here's to us and our happy married life.
+<br>
+And here's to all the beautiful memories
+we haven't made yet.
+</p>
+
+<p>
+I love you today, tomorrow and forever. ❤️
+</p>
+
+<p>
+Always yours,<br>
+${YOUR_NAME}
+</p>
+`;
+
+
+/* ==================================================
+   SCREEN CONTROL
+================================================== */
+
+let currentScreen = 1;
+
+function nextScreen() {
+
+    const current =
+        document.getElementById("screen" + currentScreen);
+
+    current.classList.remove("active");
+
+    currentScreen++;
+
+    const next =
+        document.getElementById("screen" + currentScreen);
+
+    if (next) {
+        next.classList.add("active");
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+        createHearts(8);
+    }
+}
+
+
+/* ==================================================
+   NAMES
+================================================== */
+
+document.querySelectorAll(".his-name").forEach(el => {
+    el.textContent = HIS_NAME;
+});
+
+
+/* ==================================================
+   FLOATING HEARTS
+================================================== */
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    const hearts = [
+        "❤️",
+        "💗",
+        "💕",
+        "💖",
+        "💘",
+        "💞",
+        "✨"
+    ];
+
+    heart.textContent =
+        hearts[Math.floor(Math.random() * hearts.length)];
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (12 + Math.random() * 22) + "px";
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 6) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 11000);
+}
+
+
+function createHearts(number = 5) {
+
+    for (let i = 0; i < number; i++) {
+
+        setTimeout(() => {
+            createHeart();
+        }, i * 180);
+
+    }
+}
+
+
+/* Continuous subtle hearts */
+
+setInterval(() => {
+
+    if (Math.random() > .35) {
+        createHeart();
+    }
+
+}, 1800);
+
+
+/* ==================================================
+   🎊 CONFETTI
+================================================== */
+
+function createConfetti(amount = 120) {
+
+    const symbols = [
+        "❤️",
+        "💗",
+        "✨",
+        "🎉",
+        "💕"
+    ];
+
+    for (let i = 0; i < amount; i++) {
+
+        const piece =
+            document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.textContent =
+            symbols[
+                Math.floor(Math.random() * symbols.length)
+            ];
+
+        piece.style.left =
+            Math.random() * 100 + "vw";
+
+        piece.style.top =
+            (-10 - Math.random() * 20) + "vh";
+
+        piece.style.animationDuration =
+            (2 + Math.random() * 3) + "s";
+
+        piece.style.fontSize =
+            (10 + Math.random() * 15) + "px";
+
+        document.body.appendChild(piece);
+
+        setTimeout(() => {
+            piece.remove();
+        }, 6000);
+    }
+}
+
+
+/* ==================================================
+   💖 REASONS
+================================================== */
+
+const reasons = [
+
+    {
+        title: "Your smile",
+        text: "Because somehow it makes everything feel better."
+    },
+
+    {
+        title: "Your heart",
+        text: "You care more deeply than you realize."
+    },
+
+    {
+        title: "The way you understand me",
+        text: "Sometimes without me even saying anything."
+    },
+
+    {
+        title: "Your patience with me",
+        text: "Even when I am being completely impossible. 😂❤️"
+    },
+
+    {
+        title: "Your little habits",
+        text: "The things you probably don't even notice, but I secretly love."
+    },
+
+    {
+        title: "The way you make me feel safe",
+        text: "With you, I can simply be myself."
+    },
+
+    {
+        title: "Your support",
+        text: "You make me believe that I can do more."
+    },
+
+    {
+        title: "Your laugh",
+        text: "One of my favourite sounds in the world."
+    },
+
+    {
+        title: "The person you are",
+        text: "Kind, genuine and wonderfully you."
+    },
+
+    {
+        title: "Simply… YOU ❤️",
+        text: "Because I don't need a reason to love you."
+    }
+
+];
+
+let reasonIndex = 0;
+
+function nextReason() {
+
+    reasonIndex++;
+
+    if (reasonIndex >= reasons.length) {
+
+        reasonIndex = 0;
+
+        document.getElementById("reasonButton")
+            .textContent = "Start Again ❤️";
+    }
+
+    const reason =
+        reasons[reasonIndex];
+
+    const card =
+        document.getElementById("reasonCard");
+
+    card.style.animation = "none";
+
+    void card.offsetWidth;
+
+    card.style.animation = "cardIn .5s ease";
+
+    document.getElementById("reasonNumber")
+        .textContent =
+        String(reasonIndex + 1).padStart(2, "0")
+        + " ❤️";
+
+    card.innerHTML = `
+        <h2>${reason.title}</h2>
+        <p>${reason.text}</p>
+    `;
+}
+
+
+/* ==================================================
+   🎵 SONG
+================================================== */
+
+function openSong() {
+
+    if (
+        SONG_URL.includes("YOUR_SONG_ID")
+    ) {
+
+        alert(
+            "Please add your YouTube song link in the CUSTOMIZE HERE section."
+        );
+
+        return;
+    }
+
+    window.open(
+        SONG_URL,
+        "_blank"
+    );
+}
+
+
+/* ==================================================
+   💌 LETTER
+================================================== */
+
+let letterShown = false;
+
+function showLetter() {
+
+    if (letterShown) return;
+
+    letterShown = true;
+
+    const container =
+        document.getElementById("letter");
+
+    container.innerHTML = "";
+
+    /*
+       Simple typing effect.
+       HTML is revealed paragraph by paragraph.
+    */
+
+    const temp =
+        document.createElement("div");
+
+    temp.innerHTML = letterText;
+
+    const elements =
+        Array.from(temp.children);
+
+    let index = 0;
+
+    function typeNext() {
+
+        if (index >= elements.length) {
+            return;
+        }
+
+        container.appendChild(
+            elements[index]
+        );
+
+        elements[index].style.opacity = "0";
+
+        setTimeout(() => {
+
+            elements[index].style.transition =
+                "opacity .8s";
+
+            elements[index].style.opacity = "1";
+
+            index++;
+
+            setTimeout(
+                typeNext,
+                450
+            );
+
+        }, 100);
+
+    }
+
+    typeNext();
+}
+
+
+/* ==================================================
+   FINAL SURPRISE
+================================================== */
+
+function finalSurprise() {
+
+    createConfetti(180);
+    createHearts(30);
+
+    setTimeout(() => {
+
+        document
+            .getElementById("screen9")
+            .classList.remove("active");
+
+        currentScreen = 10;
+
+        document
+            .getElementById("screen10")
+            .classList.add("active");
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }, 900);
+}
+
+
+/* ==================================================
+   WATCH SCREEN CHANGES
+================================================== */
+
+const observer =
+    new MutationObserver(() => {
+
+        if (
+            document
+            .getElementById("screen8")
+            .classList.contains("active")
+        ) {
+
+            showLetter();
+        }
+
+    });
+
+observer.observe(
+    document.body,
+    {
+        attributes: true,
+        subtree: true
+    }
+);
+
+
+/* ==================================================
+   STARTUP
+================================================== */
+
+createHearts(12);
+
+</script>
+
+</body>
+</html>
